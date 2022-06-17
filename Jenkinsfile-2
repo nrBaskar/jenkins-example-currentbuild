@@ -8,11 +8,7 @@ pipeline {
       post {
         success {
           script {
-            currentBuild.result = 'FAILURE'
-          }
-        }
-      }
-    }
+            currentBuild.result = 'FAILED'
   }
   post {
     always {
