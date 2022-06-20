@@ -5,10 +5,10 @@ pipeline {
 if (currentBuild.result == 'success') {
  sh 'echo Build successfully executed and trigger to testing server'
 }
-else {
+else (currentBuild.result == 'failure'){
   sh "echo 'Build failure'"
 } 
-     
+  
 }
 }
   }  
