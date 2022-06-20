@@ -6,10 +6,10 @@ pipeline {
            script {
                if (env.currentBuild.result == 'SUCCESS') 
                    {
-                    echo 'currentBuild is pass'
+                    echo 'Hello from currentBuild is pass'
                }
                else {
-                  sh " echo 'currentBuild from ${env.currentBuild.result} failure!'"
+                  sh " echo 'Hello from currentBuild from ${env.currentBuild.result} failure!'"
 }
    }
      }
