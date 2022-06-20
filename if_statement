@@ -1,11 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Hello') {
-      steps {
-        sh 'echo Hello World'
-      }
-    stage('step1') {
+  stage('step1') {
 if (currentBuild.result == 'success') {
  sh 'echo Build successfully executed and trigger to testing server'
 }
@@ -15,5 +11,4 @@ else {
      
 }
 }
-  }
-  }
+  }  
