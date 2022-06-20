@@ -1,14 +1,18 @@
 pipeline {
   agent any
   stages {
-  stage('step1') {
-if (currentBuild.result == 'success') {
- sh 'echo Build successfully executed and trigger to testing server'
+    stage('Hello') {
+       steps {
+           script {
+               if (env.currentBuild.result == 'SUCCESS') 
+                   {
+                    echo 'currentBuild is pass'
+               }
+               else {
+                  sh " echo 'currentBuild from ${env.currentBuild.result} failure!'"
 }
-else (currentBuild.result == 'failure'){
-  sh "echo 'Build failure'"
-} 
-  
+   }
+     }
+           }
+              }
 }
-}
-  }  
