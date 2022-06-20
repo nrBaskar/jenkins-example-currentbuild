@@ -1,0 +1,22 @@
+pipeline {
+  agent any
+  stages {
+    stage('Hello') {
+      steps {
+        sh 'echo Hello World'
+      }
+if ('currentBuild.result = 'success') {
+ sh 'echo Build successfully executed and trigger to testing server'
+}
+else (currentBuild.result = 'FAILURE') {
+  sh 'echo Build failure'
+} 
+     
+    }
+      }
+  }
+  post {
+    always {
+      echo currentBuild.currentResult
+    }
+  }
