@@ -4,12 +4,12 @@ pipeline {
     stage('Hello') {
        steps {
            script {
-               if (env.currentBuild.result == 'SUCCESS') 
+               if (currentBuild.result == 'SUCCESS') 
                    {
-                    echo 'Hello from currentBuild is pass'
+                    echo 'Hello from currentBuild is FAILURE'
                }
                else {
-                  sh " echo 'Hello from currentBuild from ${env.currentBuild.result}'"
+                  sh " echo 'Hello from currentBuild from ${currentBuild.result}'"
 }
    }
      }
