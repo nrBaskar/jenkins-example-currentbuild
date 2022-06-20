@@ -9,7 +9,7 @@ pipeline {
                     echo 'Hello from currentBuild is FAILURE'
                }
                else {
-                  sh " echo 'Hello from currentBuild from ${currentBuild.result}'"
+                  sh " echo 'Hello from currentBuild is PASSED'"
 }
    }
      }
