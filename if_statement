@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh 'echo Hello World'
       }
-if ('currentBuild.result = 'success') {
+if (currentBuild.result = 'success') {
  sh 'echo Build successfully executed and trigger to testing server'
 }
 else (currentBuild.result = 'FAILURE') {
